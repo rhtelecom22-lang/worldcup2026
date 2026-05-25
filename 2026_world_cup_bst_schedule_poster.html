@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 World Cup BST Schedule Poster</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            background-color: #0b0f19;
+        }
+        .glow-brazil {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .glow-argentina {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+        .glow-germany {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white pb-8">
+
+    <!-- Top Navigation / Controls -->
+    <header class="w-full max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between border-b border-slate-800 gap-4">
+        <div class="flex items-center space-x-2">
+            <span class="inline-block w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-slate-400" id="live-indicator">BST (Bangladesh Standard Time) Mode</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <!-- Language Toggle Button -->
+            <button id="lang-btn" onclick="toggleLanguage()" class="px-4 py-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-sm font-semibold transition-all duration-300 border border-slate-700">
+                Switch to English
+            </button>
+            <!-- Print/Download Poster Mode -->
+            <button onclick="window.print()" class="px-4 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-sm font-semibold transition-all duration-300 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2-2h4" />
+                </svg>
+                <span id="print-txt">পোস্টার প্রিন্ট / সেভ করুন</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Poster Container -->
+    <main class="w-full max-w-7xl mx-auto px-4 py-8 flex-grow flex flex-col justify-center items-center">
+        
+        <!-- Main Poster Title Block -->
+        <div class="text-center mb-10 max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 uppercase leading-tight mb-2" id="main-title">
+                2026 WORLD CUP SCHEDULE (BST)
+            </h1>
+            <p class="text-slate-400 text-sm md:text-lg tracking-wide uppercase font-medium" id="sub-title">
+                গ্রুপ পর্বের সময়সূচী • বাংলাদেশ স্ট্যান্ডার্ড টাইম (GMT+6)
+            </p>
+            
+            <!-- Dynamic Live Countdown to Kickoff (June 14, 2026 04:00 AM BST) -->
+            <div class="mt-6 inline-flex items-center gap-3 bg-slate-900/80 backdrop-blur-md px-6 py-2.5 rounded-2xl border border-slate-800 text-xs md:text-sm shadow-xl">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="text-slate-300 font-medium" id="countdown-label">প্রথম ম্যাচের কাউন্টডাউন:</span>
+                <span class="text-emerald-400 font-bold tracking-wider" id="countdown-timer">00d : 00h : 00m : 00s</span>
+            </div>
+        </div>
+
+        <!-- Three Vertical Columns Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+            
+            <!-- COLUMN 1: BRAZIL -->
+            <div class="glow-brazil rounded-3xl bg-slate-900/50 backdrop-blur-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02]">
+                <!-- Header Band -->
+                <div class="p-6 bg-gradient-to-r from-yellow-500/10 to-emerald-500/10 border-b border-emerald-500/20 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-wider text-yellow-400" id="team-1-name">BRAZIL</h2>
+                        <p class="text-xs text-emerald-400 uppercase tracking-widest font-semibold" id="team-1-sub">Group Stage</p>
+                    </div>
+                    <!-- Brazil Clean SVG Flag -->
+                    <svg class="w-12 h-8 rounded shadow" viewBox="0 0 720 504">
+                        <rect width="720" height="504" fill="#009c3b"/>
+                        <polygon points="360,40 680,252 360,464 40,252" fill="#ffdf00"/>
+                        <circle cx="360" cy="252" r="104" fill="#002776"/>
+                        <path d="M256,252 Q360,200 464,252" fill="none" stroke="#ffffff" stroke-width="12"/>
+                    </svg>
+                </div>
+
+                <!-- Match List -->
+                <div class="p-6 flex-grow flex flex-col justify-between gap-6">
+                    <!-- Match 1 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-emerald-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider" id="b1-date">June 14 • 04:00 AM</span>
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="b1-vs">vs Morocco</span>
+                        </div>
+                    </div>
+
+                    <!-- Match 2 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-emerald-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider" id="b2-date">June 20 • 06:30 AM</span>
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="b2-vs">vs Haiti</span>
+                        </div>
+                    </div>
+
+                    <!-- Match 3 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-emerald-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider" id="b3-date">June 25 • 06:00 AM</span>
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="b3-vs">vs Scotland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: ARGENTINA -->
+            <div class="glow-argentina rounded-3xl bg-slate-900/50 backdrop-blur-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02]">
+                <!-- Header Band -->
+                <div class="p-6 bg-gradient-to-r from-sky-400/10 to-slate-100/10 border-b border-sky-400/20 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-wider text-sky-400" id="team-2-name">ARGENTINA</h2>
+                        <p class="text-xs text-sky-300 uppercase tracking-widest font-semibold" id="team-2-sub">Group Stage</p>
+                    </div>
+                    <!-- Argentina Clean SVG Flag -->
+                    <svg class="w-12 h-8 rounded shadow" viewBox="0 0 840 504">
+                        <rect width="840" height="168" fill="#74acdf"/>
+                        <rect y="168" width="840" height="168" fill="#ffffff"/>
+                        <rect y="336" width="840" height="168" fill="#74acdf"/>
+                        <circle cx="420" cy="252" r="40" fill="#f6b426"/>
+                    </svg>
+                </div>
+
+                <!-- Match List -->
+                <div class="p-6 flex-grow flex flex-col justify-between gap-6">
+                    <!-- Match 1 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-sky-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-sky-300 uppercase tracking-wider" id="a1-date">June 17 • 07:00 AM</span>
+                            <span class="text-[10px] bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="a1-vs">vs Algeria</span>
+                        </div>
+                    </div>
+
+                    <!-- Match 2 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-sky-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-sky-300 uppercase tracking-wider" id="a2-date">June 23 • 07:00 AM</span>
+                            <span class="text-[10px] bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="a2-vs">vs Austria</span>
+                        </div>
+                    </div>
+
+                    <!-- Match 3 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-sky-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-sky-300 uppercase tracking-wider" id="a3-date">June 26 • 08:00 AM</span>
+                            <span class="text-[10px] bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="a3-vs">vs Jordan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: GERMANY -->
+            <div class="glow-germany rounded-3xl bg-slate-900/50 backdrop-blur-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02]">
+                <!-- Header Band -->
+                <div class="p-6 bg-gradient-to-r from-red-600/10 to-yellow-500/10 border-b border-red-500/20 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-wider text-rose-500" id="team-3-name">GERMANY</h2>
+                        <p class="text-xs text-yellow-500 uppercase tracking-widest font-semibold" id="team-3-sub">Group Stage</p>
+                    </div>
+                    <!-- Germany Clean SVG Flag -->
+                    <svg class="w-12 h-8 rounded shadow" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#ffce00"/>
+                        <rect width="5" height="2" fill="#dd0000"/>
+                        <rect width="5" height="1" fill="#000000"/>
+                    </svg>
+                </div>
+
+                <!-- Match List -->
+                <div class="p-6 flex-grow flex flex-col justify-between gap-6">
+                    <!-- Match 1 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-red-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider" id="g1-date">June 14 • 11:00 PM</span>
+                            <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="g1-vs">vs Curaçao</span>
+                        </div>
+                    </div>
+
+                    <!-- Match 2 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-red-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider" id="g2-date">June 21 • 02:00 AM</span>
+                            <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="g2-vs">vs Ivory Coast</span>
+                        </div>
+                    </div>
+
+                    <!-- Match 3 -->
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-red-500/30 transition-all">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider" id="g3-date">June 26 • 02:00 AM</span>
+                            <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-mono">BST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg font-bold text-slate-100" id="g3-vs">vs Ecuador</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Live Streaming CTA Button -->
+        <div class="mt-12 w-full max-w-md mx-auto text-center px-4">
+            <a href="https://sunplex.live/" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 font-bold text-base md:text-lg text-white shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_40px_rgba(239,68,68,0.5)] transition-all duration-300 transform hover:-translate-y-1 group border border-red-400/20">
+                <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 px-3 py-0.5 bg-slate-950 text-[10px] font-extrabold uppercase tracking-widest text-red-400 rounded-full border border-red-500/30 flex items-center gap-1.5 shadow-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                    Live Streaming
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span id="live-stream-btn-text">সরাসরি লাইভ খেলা দেখুন</span>
+            </a>
+        </div>
+
+        <!-- Footer Note with Clean Brand Design -->
+        <div class="mt-12 text-center text-slate-500 text-xs tracking-wider uppercase font-medium space-y-2">
+            <p id="footer-designed">Designed for Football Enthusiasts in Bangladesh • 2026 FIFA World Cup Edition</p>
+            <p class="text-[10px] text-slate-400 tracking-widest uppercase">Powered by <span class="text-emerald-400 font-bold transition-all hover:text-emerald-300">RH Telecom</span></p>
+        </div>
+    </main>
+
+    <!-- Interactive script for Language switching & Live countdown -->
+    <script>
+        // Language state flag
+        let currentLang = 'bn';
+
+        const textContent = {
+            bn: {
+                mainTitle: "২০২৬ বিশ্বকাপ সময়সূচী (BST)",
+                subTitle: "গ্রুপ পর্বের সময়সূচী • বাংলাদেশ স্ট্যান্ডার্ড টাইম (GMT+6)",
+                countdownLabel: "প্রথম ম্যাচের কাউন্টডাউন:",
+                switchBtn: "English-এ দেখুন",
+                printBtn: "পোস্টার প্রিন্ট / সেভ করুন",
+                groupLabel: "গ্রুপ পর্ব",
+                liveBtnText: "সরাসরি লাইভ খেলা দেখুন",
+                footer: "বাংলাদেশি ফুটবল দর্শকদের জন্য বিশেষভাবে তৈরি • ২০২৬ ফিফা বিশ্বকাপ সংস্করণ",
+                teams: {
+                    brazil: "ব্রাজিল",
+                    argentina: "আর্জেন্টিনা",
+                    germany: "জার্মানি"
+                },
+                matches: {
+                    b1Date: "১৪ জুন • ভোর ০৪:০০ টা",
+                    b1Vs: "বনাম মরক্কো",
+                    b2Date: "২০ জুন • সকাল ০৬:৩০ টা",
+                    b2Vs: "বনাম হাইতি",
+                    b3Date: "২৫ জুন • সকাল ০৬:০০ টা",
+                    b3Vs: "বনাম স্কটল্যান্ড",
+
+                    a1Date: "১৭ জুন • সকাল ০৭:০০ টা",
+                    a1Vs: "বনাম আলজেরিয়া",
+                    a2Date: "২৩ জুন • সকাল ০৭:০০ টা",
+                    a2Vs: "বনাম অস্ট্রিয়া",
+                    a3Date: "২৬ জুন • সকাল ০৮:০০ টা",
+                    a3Vs: "বনাম জর্ডান",
+
+                    g1Date: "১৪ জুন • রাত ১১:০০ টা",
+                    g1Vs: "বনাম কুরাসাও",
+                    g2Date: "২১ জুন • রাত ০২:০০ টা (ভোর)",
+                    g2Vs: "বনাম আইভরি কোস্ট",
+                    g3Date: "২৬ জুন • রাত ০২:০০ টা (ভোর)",
+                    g3Vs: "বনাম ইকুয়েডর"
+                }
+            },
+            en: {
+                mainTitle: "2026 WORLD CUP SCHEDULE (BST)",
+                subTitle: "Group Stage Schedule • Bangladesh Standard Time (GMT+6)",
+                countdownLabel: "First Match Kickoff Countdown:",
+                switchBtn: "বাংলায় দেখুন",
+                printBtn: "Print / Save Poster",
+                groupLabel: "Group Stage",
+                liveBtnText: "Watch Live Streaming Now",
+                footer: "Designed for Football Enthusiasts in Bangladesh • 2026 FIFA World Cup Edition",
+                teams: {
+                    brazil: "BRAZIL",
+                    argentina: "ARGENTINA",
+                    germany: "GERMANY"
+                },
+                matches: {
+                    b1Date: "June 14 • 04:00 AM",
+                    b1Vs: "vs Morocco",
+                    b2Date: "June 20 • 06:30 AM",
+                    b2Vs: "vs Haiti",
+                    b3Date: "June 25 • 06:00 AM",
+                    b3Vs: "vs Scotland",
+
+                    a1Date: "June 17 • 07:00 AM",
+                    a1Vs: "vs Algeria",
+                    a2Date: "June 23 • 07:00 AM",
+                    a2Vs: "vs Austria",
+                    a3Date: "June 26 • 08:00 AM",
+                    a3Vs: "vs Jordan",
+
+                    g1Date: "June 14 • 11:00 PM",
+                    g1Vs: "vs Curaçao",
+                    g2Date: "June 21 • 02:00 AM",
+                    g2Vs: "vs Ivory Coast",
+                    g3Date: "June 26 • 02:00 AM",
+                    g3Vs: "vs Ecuador"
+                }
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'bn' ? 'en' : 'bn';
+            updateUI();
+        }
+
+        function updateUI() {
+            const data = textContent[currentLang];
+            
+            // Text values updates
+            document.getElementById('main-title').innerText = data.mainTitle;
+            document.getElementById('sub-title').innerText = data.subTitle;
+            document.getElementById('countdown-label').innerText = data.countdownLabel;
+            document.getElementById('lang-btn').innerText = data.switchBtn;
+            document.getElementById('print-txt').innerText = data.printBtn;
+            document.getElementById('footer-designed').innerText = data.footer;
+            document.getElementById('live-stream-btn-text').innerText = data.liveBtnText;
+
+            // Teams Name
+            document.getElementById('team-1-name').innerText = data.teams.brazil;
+            document.getElementById('team-1-sub').innerText = data.groupLabel;
+            document.getElementById('team-2-name').innerText = data.teams.argentina;
+            document.getElementById('team-2-sub').innerText = data.groupLabel;
+            document.getElementById('team-3-name').innerText = data.teams.germany;
+            document.getElementById('team-3-sub').innerText = data.groupLabel;
+
+            // Brazil Matches
+            document.getElementById('b1-date').innerText = data.matches.b1Date;
+            document.getElementById('b1-vs').innerText = data.matches.b1Vs;
+            document.getElementById('b2-date').innerText = data.matches.b2Date;
+            document.getElementById('b2-vs').innerText = data.matches.b2Vs;
+            document.getElementById('b3-date').innerText = data.matches.b3Date;
+            document.getElementById('b3-vs').innerText = data.matches.b3Vs;
+
+            // Argentina Matches
+            document.getElementById('a1-date').innerText = data.matches.a1Date;
+            document.getElementById('a1-vs').innerText = data.matches.a1Vs;
+            document.getElementById('a2-date').innerText = data.matches.a2Date;
+            document.getElementById('a2-vs').innerText = data.matches.a2Vs;
+            document.getElementById('a3-date').innerText = data.matches.a3Date;
+            document.getElementById('a3-vs').innerText = data.matches.a3Vs;
+
+            // Germany Matches
+            document.getElementById('g1-date').innerText = data.matches.g1Date;
+            document.getElementById('g1-vs').innerText = data.matches.g1Vs;
+            document.getElementById('g2-date').innerText = data.matches.g2Date;
+            document.getElementById('g2-vs').innerText = data.matches.g2Vs;
+            document.getElementById('g3-date').innerText = data.matches.g3Date;
+            document.getElementById('g3-vs').innerText = data.matches.g3Vs;
+        }
+
+        // Live Countdown to June 14, 2026 04:00:00 (BST / GMT+6)
+        const targetDate = new Date("June 14, 2026 04:00:00 GMT+0600").getTime();
+
+        const timerInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output values
+            const daysText = currentLang === 'bn' ? replaceNumbers(days) + " দিন" : days + "d";
+            const hoursText = currentLang === 'bn' ? replaceNumbers(hours) + " ঘণ্টা" : hours + "h";
+            const minutesText = currentLang === 'bn' ? replaceNumbers(minutes) + " মিনিট" : minutes + "m";
+            const secondsText = currentLang === 'bn' ? replaceNumbers(seconds) + " সেকেন্ড" : seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("countdown-timer").innerHTML = currentLang === 'bn' ? "বিশ্বকাপ শুরু হয়েছে!" : "WORLD CUP HAS KICKED OFF!";
+            } else {
+                document.getElementById("countdown-timer").innerHTML = `${daysText} : ${hoursText} : ${minutesText} : ${secondsText}`;
+            }
+        }, 1000);
+
+        // Helper function for Bengali digits conversion
+        function replaceNumbers(input) {
+            const numbers = {
+                0: '০', 1: '১', 2: '২', 3: '৩', 4: '৪', 5: '৫', 6: '৬', 7: '৭', 8: '৮', 9: '৯'
+            };
+            return input.toString().split('').map(digit => numbers[digit] || digit).join('');
+        }
+
+        // Initialize UI with Bengali first
+        window.onload = function() {
+            updateUI();
+        };
+    </script>
+</body>
+</html>
