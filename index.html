@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Cup 2026 Schedule</title>
+    <title>FIFA World Cup 2026 BST Schedule</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for premium look -->
@@ -173,7 +173,7 @@
                     <!-- Match 3 -->
                     <div class="p-4 rounded-2xl bg-slate-950/40 border border-slate-800 hover:border-sky-500/30 transition-all">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-semibold text-sky-300 uppercase tracking-wider" id="a3-date">June 26 • 08:00 AM</span>
+                            <span class="text-xs font-semibold text-sky-300 uppercase tracking-wider" id="a3-date">June 28 • 08:00 AM</span>
                             <span class="text-[10px] bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded font-mono">BST</span>
                         </div>
                         <div class="flex items-center gap-3">
@@ -238,19 +238,24 @@
 
         </div>
 
-        <!-- Live Streaming CTA Button -->
-        <div class="mt-12 w-full max-w-md mx-auto text-center px-4">
-            <a href="https://sunplex.live/" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 font-bold text-base md:text-lg text-white shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_40px_rgba(239,68,68,0.5)] transition-all duration-300 transform hover:-translate-y-1 group border border-red-400/20">
-                <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 px-3 py-0.5 bg-slate-950 text-[10px] font-extrabold uppercase tracking-widest text-red-400 rounded-full border border-red-500/30 flex items-center gap-1.5 shadow-md">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
-                    Live Streaming
-                </span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span id="live-stream-btn-text">সরাসরি লাইভ খেলা দেখুন</span>
-            </a>
+        <!-- Live Match Streaming Link -->
+        <div class="mt-12 w-full max-w-xl text-center">
+            <div class="relative group">
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-red-600 to-rose-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                <a href="https://sunplex.live/" target="_blank" class="relative inline-flex items-center justify-center w-full px-8 py-4 bg-slate-950 rounded-2xl border border-red-500/30 transition-all duration-300 hover:border-red-500 gap-3">
+                    <span class="flex h-3 w-3 relative">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    <span class="text-sm font-bold tracking-wider text-red-400 uppercase" id="live-btn-txt">
+                        সরাসরি লাইভ খেলা দেখুন
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-2 text-[10px] text-slate-500 tracking-widest uppercase">Stream matches on sunplex.live</p>
         </div>
 
         <!-- Footer Note with Clean Brand Design -->
@@ -273,7 +278,7 @@
                 switchBtn: "English-এ দেখুন",
                 printBtn: "পোস্টার প্রিন্ট / সেভ করুন",
                 groupLabel: "গ্রুপ পর্ব",
-                liveBtnText: "সরাসরি লাইভ খেলা দেখুন",
+                liveBtn: "সরাসরি লাইভ খেলা দেখুন",
                 footer: "বাংলাদেশি ফুটবল দর্শকদের জন্য বিশেষভাবে তৈরি • ২০২৬ ফিফা বিশ্বকাপ সংস্করণ",
                 teams: {
                     brazil: "ব্রাজিল",
@@ -285,14 +290,14 @@
                     b1Vs: "বনাম মরক্কো",
                     b2Date: "২০ জুন • সকাল ০৬:৩০ টা",
                     b2Vs: "বনাম হাইতি",
-                    b3Date: "২৫ জুন • সকাল ০৬:০০ টা",
+                    b3Date: "২৫ জুন • ভোর ০৪:০০ টা",
                     b3Vs: "বনাম স্কটল্যান্ড",
 
                     a1Date: "১৭ জুন • সকাল ০৭:০০ টা",
                     a1Vs: "বনাম আলজেরিয়া",
-                    a2Date: "২৩ জুন • সকাল ০৭:০০ টা",
+                    a2Date: "২৩ জুন • রাত ১১:০০ টা",
                     a2Vs: "বনাম অস্ট্রিয়া",
-                    a3Date: "২৬ জুন • সকাল ০৮:০০ টা",
+                    a3Date: "২৮ জুন • সকাল ০৮:০০ টা",
                     a3Vs: "বনাম জর্ডান",
 
                     g1Date: "১৪ জুন • রাত ১১:০০ টা",
@@ -310,7 +315,7 @@
                 switchBtn: "বাংলায় দেখুন",
                 printBtn: "Print / Save Poster",
                 groupLabel: "Group Stage",
-                liveBtnText: "Watch Live Streaming Now",
+                liveBtn: "Watch Live Streaming Now",
                 footer: "Designed for Football Enthusiasts in Bangladesh • 2026 FIFA World Cup Edition",
                 teams: {
                     brazil: "BRAZIL",
@@ -322,14 +327,14 @@
                     b1Vs: "vs Morocco",
                     b2Date: "June 20 • 06:30 AM",
                     b2Vs: "vs Haiti",
-                    b3Date: "June 25 • 06:00 AM",
+                    b3Date: "June 25 • 04:00 AM",
                     b3Vs: "vs Scotland",
 
                     a1Date: "June 17 • 07:00 AM",
                     a1Vs: "vs Algeria",
-                    a2Date: "June 23 • 07:00 AM",
+                    a2Date: "June 23 • 11:00 PM",
                     a2Vs: "vs Austria",
-                    a3Date: "June 26 • 08:00 AM",
+                    a3Date: "June 28 • 08:00 AM",
                     a3Vs: "vs Jordan",
 
                     g1Date: "June 14 • 11:00 PM",
@@ -357,7 +362,7 @@
             document.getElementById('lang-btn').innerText = data.switchBtn;
             document.getElementById('print-txt').innerText = data.printBtn;
             document.getElementById('footer-designed').innerText = data.footer;
-            document.getElementById('live-stream-btn-text').innerText = data.liveBtnText;
+            document.getElementById('live-btn-txt').innerText = data.liveBtn;
 
             // Teams Name
             document.getElementById('team-1-name').innerText = data.teams.brazil;
